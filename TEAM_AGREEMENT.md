@@ -6,7 +6,7 @@ Este documento establece las reglas de convivencia, comunicación y estándares 
 | Nombre | Rol | Usuario de GitHub |
 | :--- | :--- | :--- |
 | [Deivy Yesid Acosta Acuña] | Líder (Arquitecto) | `@DeivyAcosta1523-pixel` |
-| [Nombre del Aprendiz 2] | Desarrollador | `@juliandiaz-05` |
+| [Julian Andres Diaz Otavo] | Desarrollador | `@juliandiaz-05` |
 | [Nombre del Aprendiz 3] | Desarrollador | `@andresdulcey417-ship-it` |
 
 ## 2. Canales de Comunicación
