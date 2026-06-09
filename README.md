@@ -1,5 +1,5 @@
 # PROYECTO BASE: MODULARIZACION - Software Factory SENA
-PARTE 1 APROPIACION 
+PARTE 1 APROPIACION. 
 
 • ¿Qué responsabilidades existen actualmente dentro del archivo principal?
 Respuesta: Las responsabilidades que presenta actualmente el archivo es que acude y cumple las peticiones que pide o requiere el usuario. Este archivo este super centralizado den la modularizacion.
