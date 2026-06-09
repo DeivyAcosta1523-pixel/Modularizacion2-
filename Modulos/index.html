@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo 3</title>
+    <script type="module" src="./src/index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Módulo de Gestión de Tareas ADSO</h1>
+        
+        <div id="userNameError" class="alerta-mensaje"></div>
+
+        <form id="messageForm">
+            <div class="form-group">
+                <label for="userName">ID del Usuario:</label>
+                <input type="number" id="userName" placeholder="Ej: 1" min="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="userMessage">Descripción de la Tarea:</label>
+                <input type="text" id="userMessage" placeholder="Escribe la descripción de la tarea...">
+            </div>
+
+            <button type="submit">Guardar Tarea</button>
+        </form>
+
+        <div class="meta-info">
+            <span id="messageCount">0 tareas registradas</span>
+        </div>
+
+        <table class="tabla-tareas">
+            <thead>
+                <tr>
+                    <th>ID Usu.</th>
+                    <th>Nombre Usuario</th>
+                    <th>Descripción de la Tarea</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="messagesContainer">
+                <tr id="emptyState">
+                    <td colspan="5" style="text-align: center; color: gray; padding: 20px;">
+                        No hay tareas registradas en el sistema.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
