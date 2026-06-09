@@ -17,5 +17,5 @@ Respuesta: "La coordinación se queda en las funciones de inicialización, como 
 
 
 • ¿Existen funciones reutilizables que podrían aislarse?
-Respuesta: "Sí, un montón. Todo lo que sea formatear texto, validar campos de formularios o helpers de fechas se está repitiendo o sobrecargando el flujo principal. Al modularizar, la regla de oro es sacar este código repetitivo a un archivo de utilidades (un utils.js). Así, cualquier otro módulo que necesite formatear un dato simplemente lo importa, evitando duplicar código."
+Respuesta: "Sí, un montón. Todo lo que sea formatear texto, validar campos de formularios o helpers de fechas se está repitiendo o sobrecargando el flujo principal. Al modularizar, la regla de oro es sacar este código repetitivo a un archivo de utilidades (un utils.js). Así, cualquier otro módulo que necesite formatear un dato simplemente lo importa, evitando duplicar código..."
 
