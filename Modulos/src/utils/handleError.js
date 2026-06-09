@@ -1,5 +1,3 @@
-import { lanzarNotificacion } from '../ui/notification.js';
-
 export function handleGenericError(mensaje) {
-    lanzarNotificacion(mensaje, "red", "#fdedec");
+    return { texto: mensaje, color: "red", fondo: "#fdedec" };
 }
