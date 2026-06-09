@@ -2,7 +2,7 @@ import { buildRowHtml } from './toInsertIntoTable.js';
 import { actualizarContadorInterfaz } from './showEmptyTask.js';
 import { taskService } from '../services/index.js';
 import { lanzarNotificacion } from './notification.js';
-import { getStatusConfig } from '../utils/index.js';
+import { getStatusConfig, getSiguienteEstado } from '../utils/index.js';
 
 const tablaTareas = document.getElementById('messagesContainer');
 let localState = { total: 0 };
@@ -25,8 +25,13 @@ export function agregarFilaTabla(tarea) {
     actualizarContadorInterfaz(localState.total);
 }
 
+export function limpiarTabla() {
+    if (tablaTareas) tablaTareas.innerHTML = '';
+    localState.total = 0;
+}
+
 async function handlerCambiarEstado(id, estadoActual, filaHTML) {
-    const nuevoEstado = estadoActual === "Pendiente" ? "Completada" : "Pendiente";
+    const nuevoEstado = getSiguienteEstado(estadoActual);
     try {
         const tAct = await taskService.updateTaskStatus(id, nuevoEstado);
         lanzarNotificacion(`Estado de tarea cambiado a: ${tAct.estado}`, "green", "#e8f8f5");

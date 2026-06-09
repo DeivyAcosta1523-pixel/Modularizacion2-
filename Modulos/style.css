@@ -85,6 +85,76 @@ button[type="submit"]:hover {
     font-size: 14px;
 }
 
+.toolbar {
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.toolbar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.toolbar-section h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toolbar-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.toolbar-row select,
+.toolbar-row input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    background: white;
+}
+
+.btn-filtrar,
+.btn-limpiar,
+.btn-ordenar,
+.btn-exportar {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-filtrar { background-color: #3498db; color: white; }
+.btn-filtrar:hover { background-color: #2980b9; }
+
+.btn-limpiar { background-color: #95a5a6; color: white; }
+.btn-limpiar:hover { background-color: #7f8c8d; }
+
+.btn-ordenar { background-color: #9b59b6; color: white; }
+.btn-ordenar:hover { background-color: #8e44ad; }
+
+.btn-exportar { background-color: #2c3e50; color: white; }
+.btn-exportar:hover { background-color: #1a252f; }
+
 /* RNF-03: Estilos corregidos para ocultar la alerta inicialmente */
 .alerta-mensaje {
     display: none; 
