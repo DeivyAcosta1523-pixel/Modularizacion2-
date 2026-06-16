@@ -1,8 +1,8 @@
-import { buildRowHtml } from './toInsertIntoTable.js';
-import { actualizarContadorInterfaz } from './showEmptyTask.js';
-import { taskService } from '../services/index.js';
-import { lanzarNotificacion } from './notification.js';
-import { getStatusConfig, getSiguienteEstado } from '../utils/index.js';
+import { buildRowHtml } from './toInsertIntoTable';
+import { actualizarContadorInterfaz } from './showEmptyTask';
+import { taskService } from '../services';
+import { lanzarNotificacion } from './notification';
+import { getStatusConfig, getSiguienteEstado } from '../utils';
 
 const tablaTareas = document.getElementById('messagesContainer');
 let localState = { total: 0 };

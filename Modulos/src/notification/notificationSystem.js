@@ -1,4 +1,4 @@
-import { lanzarNotificacion, limpiarNotificacion } from '../ui/notification.js';
+import { lanzarNotificacion, limpiarNotificacion } from '../ui/notification';
 
 export function showSuccess(mensaje) {
     lanzarNotificacion(mensaje, "#27ae60", "#e8f8f5");

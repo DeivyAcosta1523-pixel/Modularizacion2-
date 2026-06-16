@@ -1,4 +1,4 @@
-import { API_URL } from '../api/config.js';
+import { API_URL } from '../api/config';
 
 export const taskService = {
     async getTasks() {

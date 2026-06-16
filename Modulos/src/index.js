@@ -1,17 +1,17 @@
-import { userService, taskService } from './services/index.js';
+import { userService, taskService } from './services';
 import {
     lanzarNotificacion,
     limpiarNotificacion,
     clearTaskInput,
-    actualizarContadorInterfaz,
+    actualizarContadorInterfaz, 
     agregarFilaTabla,
     limpiarTabla
-} from './ui/index.js';
-import { validateIdInput, handleApiError, handleGenericError } from './utils/index.js';
-import { applyFilters, getFiltrosFromDOM } from './filters/filterBar.js';
-import { sortTasks, getSortConfigFromDOM } from './sorting/sortControls.js';
-import { showSuccess, showError, showInfo, showWarning } from './notification/notificationSystem.js';
-import { exportToJSON } from './export/exportTasks.js';
+} from './ui';
+import { validateIdInput, handleApiError, handleGenericError } from './utils';
+import { applyFilters, getFiltrosFromDOM } from './filters/filterBar';
+import { sortTasks, getSortConfigFromDOM } from './sorting/sortControls';
+import { showSuccess, showError, showInfo, showWarning } from './notification/notificationSystem';
+import { exportToJSON } from './export/exportTasks';
 
 const formBusqueda = document.getElementById('messageForm');
 const inputId = document.getElementById('userName');
@@ -23,7 +23,7 @@ function mostrarNotificacion(notif) {
     if (notif && notif.texto) {
         lanzarNotificacion(notif.texto, notif.color, notif.fondo);
     }
-}
+}   
 
 function renderizarTareas(tareas) {
     limpiarTabla();

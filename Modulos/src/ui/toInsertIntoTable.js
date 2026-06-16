@@ -1,4 +1,4 @@
-import { getStatusConfig } from '../utils/statusMapper.js';
+import { getStatusConfig } from '../utils/statusMapper';
 
 export function buildRowHtml(idTarea, nombre, idUsuario, descripcion, estado) {
     const { colorEstado, textoBotonEstado, estiloDecoracionTexto, bgColorBoton } = getStatusConfig(estado);
