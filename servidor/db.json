@@ -53,13 +53,6 @@
   ],
   "tareas": [
     {
-      "id": "29d6",
-      "idUsuario": 1,
-      "nombreUsuario": "Ana Torres",
-      "descripcion": "Sed minus ducimus r",
-      "estado": "Pendiente"
-    },
-    {
       "id": "5d19",
       "idUsuario": 1,
       "nombreUsuario": "Ana Torres",
@@ -67,11 +60,12 @@
       "estado": "Pendiente"
     },
     {
-      "id": "4d3c",
-      "idUsuario": 2,
-      "nombreUsuario": "Carlos Gómez",
-      "descripcion": "tareas  Editar",
-      "estado": "Pendiente"
+      "idUsuario": 1,
+      "nombreUsuario": "Ana Torres",
+      "descripcion": "kiojuhyg",
+      "estado": "Pendiente",
+      "createdAt": "2026-06-16T19:20:40.412Z",
+      "id": "0MDqmb3"
     }
   ]
 }

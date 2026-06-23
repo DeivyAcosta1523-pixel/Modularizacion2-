@@ -1,1 +1,1 @@
-export const API_URL = window.location.origin;
+export const API_URL = 'http://10.0.101.248:3001';
