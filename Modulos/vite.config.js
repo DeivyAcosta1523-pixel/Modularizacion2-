@@ -4,8 +4,8 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     proxy: {
-      '/users': 'http:// 172.25.208.1:3001',
-      '/tareas': 'http:// 172.25.208.1:3001'
+      '/users': 'http://10.5.225.37:3001',
+      '/tareas': 'http://10.5.225.37:3001'
     }
   }
 })
