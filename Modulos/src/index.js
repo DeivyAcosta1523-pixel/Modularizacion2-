@@ -17,6 +17,14 @@ const formBusqueda = document.getElementById('messageForm');
 const inputId = document.getElementById('userName');
 const inputTareaDesc = document.getElementById('userMessage');
 
+function debounce(fn, delay = 400) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+}
+
 let todasLasTareas = [];
 
 function mostrarNotificacion(notif) {
@@ -43,19 +51,24 @@ function aplicarFiltrosYSort() {
 }
 
 if (inputId) {
-    inputId.addEventListener('input', async function() {
+    inputId.addEventListener('input', debounce(async function() {
         const id = this.value.trim();
         if (id === "") {
             limpiarNotificacion();
+            cargarTareasIniciales();
             return;
         }
         try {
             const usuario = await userService.getUserById(id);
             showInfo(`Usuario encontrado: ${usuario.name}`);
+            await cargarTareasDeUsuario(usuario.id, usuario.name);
         } catch {
-            lanzarNotificacion("Buscando usuario en el sistema...", "gray", "#f5f5f5");
+            lanzarNotificacion("Usuario no encontrado", "gray", "#f5f5f5");
+            todasLasTareas = [];
+            limpiarTabla();
+            actualizarContadorInterfaz(0);
         }
-    });
+    }));
 }
 
 async function cargarTareasDeUsuario(idUsuario, nombreUsuario) {
@@ -78,27 +91,19 @@ async function cargarTareasDeUsuario(idUsuario, nombreUsuario) {
 }
 
 if (formBusqueda) {
-    formBusqueda.onsubmit = async function(e) {
+    formBusqueda.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const idBuscado = validateIdInput(inputId.value);
         const tareaTexto = inputTareaDesc.value.trim();
 
         if (idBuscado === "") {
-            mostrarNotificacion(handleGenericError("Error: Por favor ingrese un ID de Usuario para buscar o guardar."));
+            mostrarNotificacion(handleGenericError("Error: Por favor ingrese un ID de Usuario."));
             return;
         }
 
         if (tareaTexto === "") {
-            showInfo("Consultando historial en el servidor...");
-            try {
-                const usuario = await userService.getUserById(idBuscado);
-                await cargarTareasDeUsuario(usuario.id, usuario.name);
-            } catch (error) {
-                todasLasTareas = [];
-                limpiarTabla();
-                mostrarNotificacion(handleApiError(error));
-            }
+            showWarning("Escribe una descripción para guardar la tarea.");
             return;
         }
 
@@ -114,13 +119,12 @@ if (formBusqueda) {
 
             const tFinal = await taskService.createTask(nuevaTarea);
             showSuccess(`¡Tarea registrada exitosamente para ${tFinal.nombreUsuario}!`);
-
             await cargarTareasDeUsuario(tFinal.idUsuario, tFinal.nombreUsuario);
             clearTaskInput();
         } catch (error) {
             mostrarNotificacion(handleApiError(error));
         }
-    };
+    });
 }
 
 async function cargarTareasIniciales() {
